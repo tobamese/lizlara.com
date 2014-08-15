@@ -1,0 +1,403 @@
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Liz Lara | UX Designer and Illustrator </title>
+	<meta name="author" content="Liz Lara"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<link rel="shortcut icon" href="assets/images/favicon.ico" />
+	<link href="assets/css/bootstrap.css" rel="stylesheet" media="screen" />
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+	<link href='http://fonts.googleapis.com/css?family=EB+Garamond' rel='stylesheet' type='text/css'>
+		<script src="http://code.jquery.com/jquery-latest.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function() {
+				var navMenuToggled = false;
+				$(".menuButton").click(function(ev){
+					ev.preventDefault();
+					if(!navMenuToggled){
+						$(".small").css("height","360px");
+						navMenuToggled = true;
+					}
+					else{
+						$(".small").css("height","80px");
+						navMenuToggled=false;
+					}
+				});
+			});
+			$(window).resize(function() {
+				if($(window).width()>480){
+					$(".small").css("height","80px");
+				}
+			});
+		</script>
+	<script type="text/javascript">
+		$(document).on("scroll",function(){
+			if($(document).width()>480){
+				if($(document).scrollTop()>100){ 
+					$("header").removeClass("large").addClass("small");
+					}
+				else{
+					$("header").removeClass("small").addClass("large");
+					}
+			}
+			else{
+				$("header").removeClass("large").addClass("small");
+			}
+		});
+	</script>
+	<script>
+	$(function() {
+	
+		function filterPath(string) {
+			return string
+			.replace(/^\//,'')
+			.replace(/(index|default).[a-zA-Z]{3,4}$/,'')
+			.replace(/\/$/,'');
+		}
+	
+		var locationPath = filterPath(location.pathname);
+		var scrollElem = scrollableElement('html', 'body');
+	
+		// Any links with hash tags in them (can't do ^= because of fully qualified URL potential)
+		$('a[href*=#]').each(function() {
+	
+			// Ensure it's a same-page link
+			var thisPath = filterPath(this.pathname) || locationPath;
+			if (  locationPath == thisPath
+				&& (location.hostname == this.hostname || !this.hostname)
+				&& this.hash.replace(/#/,'') ) {
+	
+					// Ensure target exists
+					var $target = $(this.hash), target = this.hash;
+					if (target) {
+	
+						// Find location of target
+						var targetOffset = $target.offset().top;
+						$(this).click(function(event) {
+	
+							// Prevent jump-down
+							event.preventDefault();
+	
+							// Animate to target
+							$(scrollElem).animate({scrollTop: targetOffset}, 400, function() {
+	
+								// Set hash in URL after animation successful
+								location.hash = target;
+	
+							});
+						});
+					}
+			}
+	
+		});
+	
+		// Use the first element that is "scrollable"  (cross-browser fix?)
+		function scrollableElement(els) {
+			for (var i = 0, argLength = arguments.length; i <argLength; i++) {
+				var el = arguments[i],
+				$scrollElement = $(el);
+				if ($scrollElement.scrollTop()> 0) {
+					return el;
+				} else {
+					$scrollElement.scrollTop(1);
+					var isScrollable = $scrollElement.scrollTop()> 0;
+					$scrollElement.scrollTop(0);
+					if (isScrollable) {
+						return el;
+					}
+				}
+			}
+			return [];
+		}
+	
+	});
+	</script>
+<!--[if lte IE 7]><script src="lte-ie7.js"></script><![endif]-->
+</head>
+
+<body>
+<div class="navwrapper">
+<header class="large">
+		<nav>
+			<a href="index.html"><img class="logo" src="assets/images/logo.png"/></a>
+			<a class="menuButton" href="#">Menu</a>
+			<ul>
+				<li><a href="http://lizlaraux.tumblr.com">Writings</a></li>
+				<li><a href="#profile">Profile</a></li>
+				<li><a href="#work">Work</a></li>
+				<li><a href="#connect">Connect</a></li>
+				<li><a class="navbutton" href="mailto:me@lizlara.com?subject=New Project Inquiry">Hire me.</a></li>
+			</ul>
+		</nav>
+	</header>
+</div>
+
+<div class="span_12_of_12 intro">
+<img class="introImg" src="assets/images/georgia.png" alt="georgia" />
+<h2><strong class="orange">I'm Liz Lara.</strong> I'm a UX Developer and Illustrator.<br /> </h2><h4 class="orange">I work out of Atlanta, Ga.</h4>
+</div><!--end of Intro-->
+<div class="span_12_of_12 pennants"><!--Pennants-->
+<div class="container">
+<div class="span_3_of_12 col">
+	<h3>Illustration</h3>
+	<span class="circle ill"><span class="orange icons" data-icon="&#xe073;" aria-hidden="true"></span></span>
+	<p> Ranging from high fantasy to cartoon character design, I make imaginary things real (at least on screen.) I use a combination of hand-drawing and digital media to render my illustrations.</p>
+</div>
+<div class="span_3_of_12 col">
+	<h3>Design</h3>
+	<span class="circle des"><span class="orange icons" data-icon="&#xe020;" aria-hidden="true"></span></span>
+	<p>I conceptualize and execute design solutions for web and print and apparel. I pay special attention to creating recognizable brands. </p>
+</div>
+<div class="span_3_of_12 col">
+	<h3>Fine Art</h3>
+	<span class="circle art"><span class="orange icons" data-icon="&#xe074;" aria-hidden="true"></span></span>
+	<p>I create original paintings with conceptual and aesthetic motivations in traditional media on hand-stretched canvas and archival papers.</p>
+</div>
+<div class="span_3_of_12 col">
+	<h3>Development</h3>
+	<span class="circle dev"><span class="orange icons" data-icon="&#xe076;" aria-hidden="true"></span></span>
+	<p>I make websites in HTML5/CSS3 using a host of dandy technologies. I'm all about responsive design and intuitive user experiences. I also make apps using Ruby on Rails and Django. </p>
+</div>
+</div><!--end container-->
+</div> <!--end of Pennants-->
+<div id="profile" class="span_12_of_12"><img id="profilebanner" src="assets/images/profile.jpg" alt="profile"/>
+</div>
+
+<div class="container">
+<div class="span_12_of_12 profile">
+	
+
+<p><h2>“I love to wow myself <span class="orange">(and others)</span> with simplicity.”</h2> </span></p>
+</div><!--end of Intro-->
+<!--profile main-->
+<section class="span_12_of_12 main">
+		<p>I grew up in a very artistic family, surrounded by  creativity. My dad is a sculptor and painter (among many other creative things) and the rest of the family followed our creative genes to many different branches of creative endeavors, from software development, to music, and of course, design. 
+
+	<p>I began designing in my teens for primarily print and apparell. I loved it. I didn’t really have a computer until I was 14 (the dark ages), but ever since I wanted to make a geocities site with my favorite panda pictures, I have been designing websites. The web has evolved very much since then, and thankfully so have my skills. These days I have a much more elegant workflow, beginning with wireframing in InVision, designing in Illustrator, Photoshop, and Indesign, and coding in HTML5/CSS3 with fun Javascript and jQuery thrown in for good measure (and some truly awesome functionality). I love creating new things that seem obvious once I think of them. I love to wow myself (and others) with simplicity. I like clean code and little details that bring things to life. I just love sweating the small stuff. 
+		</p>
+		<p>Aside from my passion for design, I also paint, make illustrations, and develop web apps using Ruby and Python.  I form one half of a web design and branding firm called The Snapdragons, where I work  with my favorite developer, Zac North. 
+So, now that you’re up to speed with what I’m about, it’d be a shame to get behind on what’s up with Liz in the future. Sign up to my very sporadic newsletter for earth- shattering updates. 
+		</p>
+</section>
+</div>
+
+<div class="buttonSpan"<!--button-->
+<a href="http://eepurl.com/xYeCH" class="button"><h2>NEWSLETTER.</h2></a>
+<a href="mailto:liz@thesnapdragons.com?subject=New Project Inquiry" class="button"><h2>HIRE ME.</h2></a>
+<a id="work" href="http://twitter.com/tobamese" class="button"><h2>FOLLOW ME.</h2></a>
+</div><!--end button-->
+
+
+
+
+
+<div class="span_12_of_12">
+	
+
+<p><h2>Some of my most <span class="orange">recent work.</span> Look around. Stay a while.</h2> </span></p>
+</div><!--end of Intro-->
+<div class="span_12_of_12 work"><!--Pennants-->
+	<div class="container">
+<div class="span_12_of_12 illustration">
+	 <h2>Illustration</h2>
+	<span class="circle ill"><span class="orange icons" data-icon="&#xe073;" aria-hidden="true"></span></span>
+</div>
+        <a href="http://lizlara.dunked.com/doctor-who-paintings"><img src="assets/images/1.jpg" alt="image"></a>
+    
+ 
+    
+        <a href="http://lizlara.dunked.com/monster-characters"><img src="assets/images/2.jpg" alt="image"></a>
+    
+ 
+    
+        <a href="http://lizlara.dunked.com/lil-me"><img src="assets/images/3.jpg" alt="image"></a>
+    
+     
+    
+        <a href="http://lizlara.dunked.com/lord-zachery"><img src="assets/images/4.jpg" alt="image"></a>
+    
+
+<div class="span_12_of_12 design">
+	 <h2>Design</h2>
+	<span class="circle des"><span class="orange icons" data-icon="&#xe020;" aria-hidden="true"></span></span>
+</div>
+
+        <a href="http://lizlara.dunked.com/monsterious"><img src="assets/images/5.jpg" alt="image"></a>
+    
+ 
+    
+        <a href="http://lizlara.dunked.com/snapdragons"><img src="assets/images/6.jpg" alt="image"></a>
+   
+ 
+    
+        <a href="#"><img src="assets/images/7.jpg" alt="image"></a>
+      
+     
+        <a href="http://lizlara.dunked.com/h-kates-company-logo"><img src="assets/images/8.jpg" alt="image"></a>
+       
+
+<div class="span_12_of_12 art">
+	<h2>Fine Art</h2>
+	<span class="circle art"><span class="orange icons" data-icon="&#xe074;" aria-hidden="true"></span></span>
+</div>
+	 
+	 <a href="http://lizlara.dunked.com/close-painting-2013"><img src="assets/images/zac-liz-site.jpg" alt="Close-Zac" /></a>
+     <a href="http://lizlara.dunked.com/paintings-and-drawings/lightbox/#230982"><img src="assets/images/10.jpg" alt="Polo Shirt"/></a>
+     <a href="http://lizlara.dunked.com/close-painting-2013"><img src="assets/images/papi-liz-site.jpg" alt="Close-Blue Stones"/></a>
+     <a href="http://lizlara.dunked.com/close-painting-2013"><img src="assets/images/sal-liz-site.jpg" alt="Close-Salvi"/></a>
+    
+</div>
+<div class="span_12_of_12">
+	<h2>Development</h2>
+	<span class="circle dev"><span class="orange icons" data-icon="&#xe076;" aria-hidden="true"></span></span>
+</div>
+
+ <div class="development">
+        <a href="http://lizlara.dunked.com/suveil"><img src="assets/images/13.jpg" alt="image"></a>
+    </div> 
+</div> <!--end of Pennants-->   
+ <span id="connect">connect anchor</span>
+</div>
+
+
+
+<div class="span_12_of_12 connect">
+<h2>Hi. I have an <span class="orange">Internet Problem.</span> 
+You’ll find me all over the place.</h2>
+</div><!--end of Intro-->
+
+<div class="span_12_of_12 social socialcontainer"><!--social links-->
+	<div class="container">
+<div class="span_2_of_12 social"><a href="mailto:me@lizlara.com?subject=Hello from website" id="email"><p>Email.</p><span class="byline">(Deleting Spam.)</span></a>
+</div>
+<div class="span_2_of_12 social"><a href="http://facebook.com/tobamese" id="facebook"><p>Faceboook.</p><span class="byline">(Avoiding game requests.)</span></a>
+</div>
+<div class="span_2_of_12 social"><a href="http://be.net/lizlara" id="behance"><p>Behance.</p><span class="byline">(Embracing whitespace.)</span></a>
+</div>
+<div class="span_2_of_12 social"><a href="http://last.fm/user/tobamese" id="lastfm"><p>Last.fm.</p><span class="byline">(Grooving)</span></a>
+</div>
+<div class="span_2_of_12 social"><a href="http://instagram.com/tobamese" id="instagram"><p>Instagram.</p><span class="byline">(Shooting the fake past)</span></a>
+</div>
+<div class="span_2_of_12 social"><a href="http://github.com/tobamese" id="github"><p>Github.</p><span class="byline">(Being a repo man.)</span></a>
+</div>
+<div class="span_2_of_12 social"><a href="http://lizlara.deviantart.com" id="deviantart"><p>DeviantArt.</p><span class="byline">(Making fanart.)</span></a>
+</div>
+<div class="span_2_of_12 social"><a href="http://www.linkedin.com/in/tobamese" id="linkedin"><p>LinkedIn.</p><span class="byline">(Synergising.)</span></a>
+</div>
+<div class="span_2_of_12 social"><a href="http://lizlara-wrote.tumblr.com" id="tumblr"><p>Tumblr.</p><span class="byline">(Reblogging ironic gifs.)</span></a>
+</div>
+<div class="span_2_of_12 social"><a href="https://twitter.com/tobamese" id="twitter"><p>Twitter.</p><span class="byline">(Tweeting #YOLO.)</span></a>
+</div>
+</div><!--container-->
+<div class="container profile">
+	
+
+<p><h2>I stay in the zone with music on <span class="orange">Spotify.</span> I hash out ideas and clear out the cobwebs daily with <span class="orange">750 Words.</a>
+</div><!--end of Intro-->
+<div class="span_12_of_12"><!--Widget starts-->
+<div class="span_6_of_12 col">
+	<section class="box">
+	<img src="assets/images/music.png" alt="Music Icon" />
+	<script type="text/javascript" >
+										function calculateDateAgo(secAgo) {
+										 var agoString, agoRange, agoScaled;
+										 if(secAgo >= (agoRange = 60*60*24)) 
+										   agoString = (agoScaled = Math.floor(secAgo/agoRange))+" "+(agoScaled>1?"days":"day") + " ago"
+										 else if(secAgo >= (agoRange = 60*60))
+										   agoString = (agoScaled = Math.floor(secAgo/agoRange))+" "+(agoScaled>1?"hours":"hour") + " ago"
+										 else if(secAgo >= (agoRange = 60))
+										   agoString = (agoScaled = Math.floor(secAgo/agoRange))+" "+(agoScaled>1?"minutes":"minute") + " ago"
+										 else if(secAgo >= -60)
+										   agoString = "listening just now";
+										 else
+										   agoString = "soon ;)";
+										 return agoString
+										}
+										 
+										function lfmMostRecentTrack(JSONdata) {
+										 try {
+										 var oTrack = (new Array().concat(JSONdata.recenttracks.track))[0];
+										 document.getElementById("lfmMostRecentTrackArtist").innerHTML = oTrack.artist["#text"];
+										 document.getElementById("lfmMostRecentTrackTitle").href = oTrack.url;
+										 document.getElementById("lfmMostRecentTrackTitle").innerHTML = oTrack.name;
+										 document.getElementById("lfmMostRecentTrackDate").innerHTML = (typeof oTrack.date=="undefined"?"now playing":calculateDateAgo(new Date().getTime()/1000 - oTrack.date.uts));
+										 document.getElementById("lfmMostRecentTrack").style.visibility = "visible";
+										 } catch(e) {}
+
+										var Total = (new Array ().concat(JSONdata.recenttracks['@attr']))[0];
+										 document.getElementById("lfmMostRecentTrackTotal").innerHTML = Total.total; 
+
+										}
+										</script>
+
+										<div id="lfmMostRecentTrack" class="music">
+										<h3>Current Song</h3>
+										<a id="lfmMostRecentTrackTitle" href="" target="new"></a><br/> <h3>Artist</h3><span id="lfmMostRecentTrackArtist"></span><br/> <span id="lfmMostRecentTrackDate"></span>
+										</div>
+										 
+										<script type="text/javascript" src="http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=tobamese&api_key=376fb73b041cb5d933b03755f14a0ee3&limit=1&format=json&callback=lfmMostRecentTrack"></script>
+
+    </section>
+</div><!--end music-->
+<div class="span_6_of_12">
+	<div id="words" class="750">
+		<img class="boximage" src="assets/images/words.png" alt="Words Icon" />
+	    
+	    	<a href="http://750words.com"><h3>750 Words</h3></a>
+	    	<script language="JavaScript" src="http://www.feedroll.com/rssviewer/feed2js.php?src=http%3A%2F%2F750words.com%2Fapi%2Frss%2F2c33d99d212fcd8ad0670bf78cfed61c&num=1&desc=-1&utf=y&css=750"  charset="UTF-8" type="text/javascript"></script>
+
+<noscript>
+<a href="http://www.feedroll.com/rssviewer/feed2js.php?src=http%3A%2F%2F750words.com%2Fapi%2Frss%2F2c33d99d212fcd8ad0670bf78cfed61c&num=1&desc=-1&utf=y&css=750&html=y">View RSS feed</a>
+
+</noscript>
+</div> 
+</div><!--end words-->
+</div>
+
+<footer>
+	&copy Liz Lara 2013. Built with &hearts; in Sublime Text 2 and <a href="http://lizlara-wrote.tumblr.com/post/53822430290/credit-roll-for-selfie-site-1-0">other awesome technology.</a>
+
+</footer>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-40014345-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+<!--Development only!!-->
+<script>
+    var ws;
+    function socket() {
+      ws = new WebSocket("ws://127.0.0.1:8080");
+      ws.onmessage = function ( e ) {
+        var data = JSON.parse(e.data);
+        if ( data.r ) {
+          location.reload();
+        }
+      };
+    }
+    setInterval(function () {
+      if ( ws ) {
+        if ( ws.readyState !== 1 ) {
+          socket();
+        }
+      } else {
+        socket();
+      }
+    }, 1000);
+</script>
+<!--Go use node-live-reload and stop wasting time refreshing your browser - npm install -g node-live-reload-->
+</body>
+
+</html>
