@@ -11,111 +11,6 @@
 	<link href="assets/css/bootstrap.css" rel="stylesheet" media="screen" />
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css" />
 	<link href='http://fonts.googleapis.com/css?family=EB+Garamond' rel='stylesheet' type='text/css'>
-		<script src="http://code.jquery.com/jquery-latest.js"></script>
-		<script type="text/javascript">
-			$(document).ready(function() {
-				var navMenuToggled = false;
-				$(".menuButton").click(function(ev){
-					ev.preventDefault();
-					if(!navMenuToggled){
-						$(".small").css("height","360px");
-						navMenuToggled = true;
-					}
-					else{
-						$(".small").css("height","80px");
-						navMenuToggled=false;
-					}
-				});
-			});
-			$(window).resize(function() {
-				if($(window).width()>480){
-					$(".small").css("height","80px");
-				}
-			});
-		</script>
-	<script type="text/javascript">
-		$(document).on("scroll",function(){
-			if($(document).width()>480){
-				if($(document).scrollTop()>100){ 
-					$("header").removeClass("large").addClass("small");
-					}
-				else{
-					$("header").removeClass("small").addClass("large");
-					}
-			}
-			else{
-				$("header").removeClass("large").addClass("small");
-			}
-		});
-	</script>
-	<script>
-	$(function() {
-	
-		function filterPath(string) {
-			return string
-			.replace(/^\//,'')
-			.replace(/(index|default).[a-zA-Z]{3,4}$/,'')
-			.replace(/\/$/,'');
-		}
-	
-		var locationPath = filterPath(location.pathname);
-		var scrollElem = scrollableElement('html', 'body');
-	
-		// Any links with hash tags in them (can't do ^= because of fully qualified URL potential)
-		$('a[href*=#]').each(function() {
-	
-			// Ensure it's a same-page link
-			var thisPath = filterPath(this.pathname) || locationPath;
-			if (  locationPath == thisPath
-				&& (location.hostname == this.hostname || !this.hostname)
-				&& this.hash.replace(/#/,'') ) {
-	
-					// Ensure target exists
-					var $target = $(this.hash), target = this.hash;
-					if (target) {
-	
-						// Find location of target
-						var targetOffset = $target.offset().top;
-						$(this).click(function(event) {
-	
-							// Prevent jump-down
-							event.preventDefault();
-	
-							// Animate to target
-							$(scrollElem).animate({scrollTop: targetOffset}, 400, function() {
-	
-								// Set hash in URL after animation successful
-								location.hash = target;
-	
-							});
-						});
-					}
-			}
-	
-		});
-	
-		// Use the first element that is "scrollable"  (cross-browser fix?)
-		function scrollableElement(els) {
-			for (var i = 0, argLength = arguments.length; i <argLength; i++) {
-				var el = arguments[i],
-				$scrollElement = $(el);
-				if ($scrollElement.scrollTop()> 0) {
-					return el;
-				} else {
-					$scrollElement.scrollTop(1);
-					var isScrollable = $scrollElement.scrollTop()> 0;
-					$scrollElement.scrollTop(0);
-					if (isScrollable) {
-						return el;
-					}
-				}
-			}
-			return [];
-		}
-	
-	});
-	</script>
-<!--[if lte IE 7]><script src="lte-ie7.js"></script><![endif]-->
 </head>
 
 <body>
@@ -168,19 +63,16 @@
 
 <div class="container">
 <div class="span_12_of_12 profile">
-	
+
 
 <p><h2>“I love to wow myself <span class="orange">(and others)</span> with simplicity.”</h2> </span></p>
 </div><!--end of Intro-->
 <!--profile main-->
 <section class="span_12_of_12 main">
-		<p>I grew up in a very artistic family, surrounded by  creativity. My dad is a sculptor and painter (among many other creative things) and the rest of the family followed our creative genes to many different branches of creative endeavors, from software development, to music, and of course, design. 
-
-	<p>I began designing in my teens for primarily print and apparell. I loved it. I didn’t really have a computer until I was 14 (the dark ages), but ever since I wanted to make a geocities site with my favorite panda pictures, I have been designing websites. The web has evolved very much since then, and thankfully so have my skills. These days I have a much more elegant workflow, beginning with wireframing in InVision, designing in Illustrator, Photoshop, and Indesign, and coding in HTML5/CSS3 with fun Javascript and jQuery thrown in for good measure (and some truly awesome functionality). I love creating new things that seem obvious once I think of them. I love to wow myself (and others) with simplicity. I like clean code and little details that bring things to life. I just love sweating the small stuff. 
-		</p>
-		<p>Aside from my passion for design, I also paint, make illustrations, and develop web apps using Ruby and Python.  I form one half of a web design and branding firm called The Snapdragons, where I work  with my favorite developer, Zac North. 
-So, now that you’re up to speed with what I’m about, it’d be a shame to get behind on what’s up with Liz in the future. Sign up to my very sporadic newsletter for earth- shattering updates. 
-		</p>
+		<p>I grew up in a very artistic family, surrounded by creativity. My dad is a sculptor and painter (among many other creative things) and the rest of the family followed our creative genes to many different branches of creative endeavors, from software development, to music, and of course, design.
+		<p>I began designing in my teens for primarily print and apparell. I loved it. I didn’t really have a computer until I was 14 (the dark ages), but ever since I first created a geocities site with my favorite panda pictures, I have been designing websites. The web has evolved very much since then. I love to wow myself (and others) with simplicity. I like clean code and little details that bring things to life. I sweat the small stuff.</p>
+		<p>Aside from my passion for design, I also paint, make illustrations, and develop web apps using Ruby on Rails.  I work with clients from all over the world spanning a huge spectrum of business domains, and spend my days at Careerbuilder as a champion for user experience at a great company.</p>
+		<p>So, now that you’re up to speed with what I’m about, it’d be a shame to get behind on what’s up with Liz in the future. Sign up to my very sporadic newsletter for earth- shattering updates.</p>
 </section>
 </div>
 
@@ -195,7 +87,7 @@ So, now that you’re up to speed with what I’m about, it’d be a shame to ge
 
 
 <div class="span_12_of_12">
-	
+
 
 <p><h2>Some of my most <span class="orange">recent work.</span> Look around. Stay a while.</h2> </span></p>
 </div><!--end of Intro-->
@@ -206,19 +98,19 @@ So, now that you’re up to speed with what I’m about, it’d be a shame to ge
 	<span class="circle ill"><span class="orange icons" data-icon="&#xe073;" aria-hidden="true"></span></span>
 </div>
         <a href="http://lizlara.dunked.com/doctor-who-paintings"><img src="assets/images/1.jpg" alt="image"></a>
-    
- 
-    
+
+
+
         <a href="http://lizlara.dunked.com/monster-characters"><img src="assets/images/2.jpg" alt="image"></a>
-    
- 
-    
+
+
+
         <a href="http://lizlara.dunked.com/lil-me"><img src="assets/images/3.jpg" alt="image"></a>
-    
-     
-    
+
+
+
         <a href="http://lizlara.dunked.com/lord-zachery"><img src="assets/images/4.jpg" alt="image"></a>
-    
+
 
 <div class="span_12_of_12 design">
 	 <h2>Design</h2>
@@ -226,29 +118,29 @@ So, now that you’re up to speed with what I’m about, it’d be a shame to ge
 </div>
 
         <a href="http://lizlara.dunked.com/monsterious"><img src="assets/images/5.jpg" alt="image"></a>
-    
- 
-    
+
+
+
         <a href="http://lizlara.dunked.com/snapdragons"><img src="assets/images/6.jpg" alt="image"></a>
-   
- 
-    
+
+
+
         <a href="#"><img src="assets/images/7.jpg" alt="image"></a>
-      
-     
+
+
         <a href="http://lizlara.dunked.com/h-kates-company-logo"><img src="assets/images/8.jpg" alt="image"></a>
-       
+
 
 <div class="span_12_of_12 art">
 	<h2>Fine Art</h2>
 	<span class="circle art"><span class="orange icons" data-icon="&#xe074;" aria-hidden="true"></span></span>
 </div>
-	 
+
 	 <a href="http://lizlara.dunked.com/close-painting-2013"><img src="assets/images/zac-liz-site.jpg" alt="Close-Zac" /></a>
      <a href="http://lizlara.dunked.com/paintings-and-drawings/lightbox/#230982"><img src="assets/images/10.jpg" alt="Polo Shirt"/></a>
      <a href="http://lizlara.dunked.com/close-painting-2013"><img src="assets/images/papi-liz-site.jpg" alt="Close-Blue Stones"/></a>
      <a href="http://lizlara.dunked.com/close-painting-2013"><img src="assets/images/sal-liz-site.jpg" alt="Close-Salvi"/></a>
-    
+
 </div>
 <div class="span_12_of_12">
 	<h2>Development</h2>
@@ -257,15 +149,15 @@ So, now that you’re up to speed with what I’m about, it’d be a shame to ge
 
  <div class="development">
         <a href="http://lizlara.dunked.com/suveil"><img src="assets/images/13.jpg" alt="image"></a>
-    </div> 
-</div> <!--end of Pennants-->   
+    </div>
+</div> <!--end of Pennants-->
  <span id="connect">connect anchor</span>
 </div>
 
 
 
 <div class="span_12_of_12 connect">
-<h2>Hi. I have an <span class="orange">Internet Problem.</span> 
+<h2>Hi. I have an <span class="orange">Internet Problem.</span>
 You’ll find me all over the place.</h2>
 </div><!--end of Intro-->
 
@@ -293,7 +185,7 @@ You’ll find me all over the place.</h2>
 </div>
 </div><!--container-->
 <div class="container profile">
-	
+
 
 <p><h2>I stay in the zone with music on <span class="orange">Spotify.</span> I hash out ideas and clear out the cobwebs daily with <span class="orange">750 Words.</a>
 </div><!--end of Intro-->
@@ -304,7 +196,7 @@ You’ll find me all over the place.</h2>
 	<script type="text/javascript" >
 										function calculateDateAgo(secAgo) {
 										 var agoString, agoRange, agoScaled;
-										 if(secAgo >= (agoRange = 60*60*24)) 
+										 if(secAgo >= (agoRange = 60*60*24))
 										   agoString = (agoScaled = Math.floor(secAgo/agoRange))+" "+(agoScaled>1?"days":"day") + " ago"
 										 else if(secAgo >= (agoRange = 60*60))
 										   agoString = (agoScaled = Math.floor(secAgo/agoRange))+" "+(agoScaled>1?"hours":"hour") + " ago"
@@ -316,7 +208,7 @@ You’ll find me all over the place.</h2>
 										   agoString = "soon ;)";
 										 return agoString
 										}
-										 
+
 										function lfmMostRecentTrack(JSONdata) {
 										 try {
 										 var oTrack = (new Array().concat(JSONdata.recenttracks.track))[0];
@@ -328,7 +220,7 @@ You’ll find me all over the place.</h2>
 										 } catch(e) {}
 
 										var Total = (new Array ().concat(JSONdata.recenttracks['@attr']))[0];
-										 document.getElementById("lfmMostRecentTrackTotal").innerHTML = Total.total; 
+										 document.getElementById("lfmMostRecentTrackTotal").innerHTML = Total.total;
 
 										}
 										</script>
@@ -337,7 +229,7 @@ You’ll find me all over the place.</h2>
 										<h3>Current Song</h3>
 										<a id="lfmMostRecentTrackTitle" href="" target="new"></a><br/> <h3>Artist</h3><span id="lfmMostRecentTrackArtist"></span><br/> <span id="lfmMostRecentTrackDate"></span>
 										</div>
-										 
+
 										<script type="text/javascript" src="http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=tobamese&api_key=376fb73b041cb5d933b03755f14a0ee3&limit=1&format=json&callback=lfmMostRecentTrack"></script>
 
     </section>
@@ -345,7 +237,7 @@ You’ll find me all over the place.</h2>
 <div class="span_6_of_12">
 	<div id="words" class="750">
 		<img class="boximage" src="assets/images/words.png" alt="Words Icon" />
-	    
+
 	    	<a href="http://750words.com"><h3>750 Words</h3></a>
 	    	<script language="JavaScript" src="http://www.feedroll.com/rssviewer/feed2js.php?src=http%3A%2F%2F750words.com%2Fapi%2Frss%2F2c33d99d212fcd8ad0670bf78cfed61c&num=1&desc=-1&utf=y&css=750"  charset="UTF-8" type="text/javascript"></script>
 
@@ -353,7 +245,7 @@ You’ll find me all over the place.</h2>
 <a href="http://www.feedroll.com/rssviewer/feed2js.php?src=http%3A%2F%2F750words.com%2Fapi%2Frss%2F2c33d99d212fcd8ad0670bf78cfed61c&num=1&desc=-1&utf=y&css=750&html=y">View RSS feed</a>
 
 </noscript>
-</div> 
+</div>
 </div><!--end words-->
 </div>
 
@@ -374,6 +266,111 @@ You’ll find me all over the place.</h2>
   })();
 
 </script>
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		var navMenuToggled = false;
+		$(".menuButton").click(function(ev){
+			ev.preventDefault();
+			if(!navMenuToggled){
+				$(".small").css("height","360px");
+				navMenuToggled = true;
+			}
+			else{
+				$(".small").css("height","80px");
+				navMenuToggled=false;
+			}
+		});
+	});
+	$(window).resize(function() {
+		if($(window).width()>480){
+			$(".small").css("height","80px");
+		}
+	});
+</script>
+<script type="text/javascript">
+$(document).on("scroll",function(){
+	if($(document).width()>480){
+		if($(document).scrollTop()>100){
+			$("header").removeClass("large").addClass("small");
+			}
+		else{
+			$("header").removeClass("small").addClass("large");
+			}
+	}
+	else{
+		$("header").removeClass("large").addClass("small");
+	}
+});
+</script>
+<script>
+$(function() {
+
+function filterPath(string) {
+	return string
+	.replace(/^\//,'')
+	.replace(/(index|default).[a-zA-Z]{3,4}$/,'')
+	.replace(/\/$/,'');
+}
+
+var locationPath = filterPath(location.pathname);
+var scrollElem = scrollableElement('html', 'body');
+
+// Any links with hash tags in them (can't do ^= because of fully qualified URL potential)
+$('a[href*=#]').each(function() {
+
+	// Ensure it's a same-page link
+	var thisPath = filterPath(this.pathname) || locationPath;
+	if (  locationPath == thisPath
+		&& (location.hostname == this.hostname || !this.hostname)
+		&& this.hash.replace(/#/,'') ) {
+
+			// Ensure target exists
+			var $target = $(this.hash), target = this.hash;
+			if (target) {
+
+				// Find location of target
+				var targetOffset = $target.offset().top;
+				$(this).click(function(event) {
+
+					// Prevent jump-down
+					event.preventDefault();
+
+					// Animate to target
+					$(scrollElem).animate({scrollTop: targetOffset}, 400, function() {
+
+						// Set hash in URL after animation successful
+						location.hash = target;
+
+					});
+				});
+			}
+	}
+
+});
+
+// Use the first element that is "scrollable"  (cross-browser fix?)
+function scrollableElement(els) {
+	for (var i = 0, argLength = arguments.length; i <argLength; i++) {
+		var el = arguments[i],
+		$scrollElement = $(el);
+		if ($scrollElement.scrollTop()> 0) {
+			return el;
+		} else {
+			$scrollElement.scrollTop(1);
+			var isScrollable = $scrollElement.scrollTop()> 0;
+			$scrollElement.scrollTop(0);
+			if (isScrollable) {
+				return el;
+			}
+		}
+	}
+	return [];
+}
+
+});
+</script>
+<!--[if lte IE 7]><script src="lte-ie7.js"></script><![endif]-->
 
 <!--Development only!!-->
 <script>
