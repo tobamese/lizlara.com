@@ -1,6 +1,7 @@
 #connect {
 	visibility: hidden;
 }
+
 .boximage {
 	width: 30px;
 	height:30px;
@@ -224,6 +225,14 @@
 .pennants p {
 	margin-top: 20px;
 	text-align: center;
+}
+
+.label {
+	margin: 10px 10px;
+	font-family: sans-serif;
+	font-weight: 300;
+	font-size: 1.2em;
+	padding:5px;
 }
 /* Icon Fonts */
 @font-face {
